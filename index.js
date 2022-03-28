@@ -97,5 +97,30 @@ async function createIntern() {
     return internProfile;
 }
 
+async function addEmployee() {
+    const option = [
+        {
+            type: "list",
+            name: "role",
+            message: "Select an employee to add:",
+            choices: [
+                "Engineer",
+                "Intern",
+                "I don't have any employees to add"
+            ]
+        }
+    ]
+    const chooseEmployee = await inquirer.prompt(option);
+
+    if (chooseEmployee.role === "Engineer") {
+        createEngineer();
+    } else if (chooseEmployee.role === "Intern") {
+        createIntern();
+    } else {
+        return;
+    }
+}
+
+
 
 
