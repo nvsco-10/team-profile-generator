@@ -3,6 +3,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+const teamMembers = [];
+
 async function createManager() {
     const questions = [
         {
@@ -29,9 +31,12 @@ async function createManager() {
     ];
 
     const managerProfile = await inquirer.prompt(questions);
+    const { name, id, email, officenum} = managerProfile;
     
-    console.log(managerProfile)
-    return managerProfile;
+    console.log(managerProfile);
+    
+    const manager = new Manager(name, id, email, officenum);
+    teamMembers.push(manager);
 
 }
 
@@ -62,8 +67,14 @@ async function createEngineer() {
 
     const engineerProfile = await inquirer.prompt(questions);
     
-    console.log(engineerProfile)
-    return engineerProfile;
+    const { name, id, email, github} = engineerProfile;
+    
+    console.log(engineerProfile);
+    
+    const engineer = new Engineer(name, id, email, github);
+    teamMembers.push(engineer);
+
+    addEmployee();
 }
 
 async function createIntern() {
@@ -93,8 +104,14 @@ async function createIntern() {
 
     const internProfile = await inquirer.prompt(questions);
     
-    console.log(internProfile)
-    return internProfile;
+    const { name, id, email, school} = internProfile;
+    
+    console.log(internProfile);
+    
+    const intern = new Intern(name, id, email, school);
+    teamMembers.push(intern);
+
+    addEmployee();
 }
 
 async function addEmployee() {
@@ -117,10 +134,16 @@ async function addEmployee() {
     } else if (chooseEmployee.role === "Intern") {
         createIntern();
     } else {
+        console.log("All team members have been added.")
         return;
     }
 }
 
+async function getTeamProfile() {
+    const manager = await createManager();
+    const employees = await addEmployee();
 
+}
 
+getTeamProfile();
 
