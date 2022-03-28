@@ -66,4 +66,36 @@ async function createEngineer() {
     return engineerProfile;
 }
 
-createEngineer();
+async function createIntern() {
+    const questions = [
+        {
+            type: "input",
+            name: "name",
+            message: "What is the intern's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the intern's employee id?"
+        },
+        {
+            type: "email",
+            name: "email",
+            message: "What is the intern's email address?"
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What is the intern's school?"
+        },
+
+    ];
+
+    const internProfile = await inquirer.prompt(questions);
+    
+    console.log(internProfile)
+    return internProfile;
+}
+
+
+
