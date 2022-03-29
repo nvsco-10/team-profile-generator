@@ -3,7 +3,7 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-const { managerCard, engineerCard, internCard } = require('./src/cards');
+const { managerCard, engineerCard, internCard, htmlTemplate } = require('./src/templates');
 
 const teamMembers = [];
 
@@ -137,20 +137,22 @@ async function addEmployee() {
         createIntern();
     } else {
         console.log("All team members have been added.")
-        const data = await createCards(teamMembers);
-        generateHTML(data);
+        const employeeCards = await createCards(teamMembers);
+        generateHTML(employeeCards);
     }
 
 };
 
-function generateHTML(data) {
+function generateHTML(cards) {
+    const data = htmlTemplate(cards);
+
     const path = "./dist/index.html";
 
     fs.writeFile(path, data, e => {
         if (e) {
           console.error("write error:  " + error.message);
         } else {
-          console.log("Successful Write to " + path);
+          console.log("Success! Check out your Team Profile at" + path);
         }
     })
 
