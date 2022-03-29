@@ -4,7 +4,7 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const { managerCard, engineerCard, internCard, htmlTemplate } = require('./src/templates');
-const { validateEmail, validateString } = require('./src/validations')
+const { validateEmail, validateName } = require('./src/validations')
 
 const teamMembers = [];
 
@@ -14,7 +14,7 @@ async function createManager() {
             type: "input",
             name: "name",
             message: "What is the team manager's name?",
-            validate: validateString
+            validate: validateName
         },
         {
             type: "input",
@@ -50,7 +50,8 @@ async function createEngineer() {
         {
             type: "input",
             name: "name",
-            message: "What is the engineer's name?"
+            message: "What is the engineer's name?",
+            validate: validateName
         },
         {
             type: "input",
@@ -88,7 +89,8 @@ async function createIntern() {
         {
             type: "input",
             name: "name",
-            message: "What is the intern's name?"
+            message: "What is the intern's name?",
+            validate: validateName
         },
         {
             type: "input",

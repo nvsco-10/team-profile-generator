@@ -10,12 +10,12 @@ function validateEmail(email) {
 
 // source regex email check: https://stackoverflow.com/questions/65189877/how-can-i-validate-that-a-user-input-their-email-when-using-inquirer-npm
 
-function validateString(name) {
-    if (typeof name === "string" || name) {
+function validateName(input) {
+    if (input) {
         return true;
     } else {
-        "Please enter a name.";
+        return "Please enter a name.";
     }
 }
 
-module.exports = { validateEmail, validateString };
+module.exports = { validateEmail, validateName };
