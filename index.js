@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
+const fs = require('fs');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
 const teamMembers = [];
 
@@ -25,7 +26,7 @@ async function createManager() {
         {
             type: "input",
             name: "officenum",
-            message: "What is your the team manager's office number?"
+            message: "What is the team manager's office number?"
         },
 
     ];
@@ -135,15 +136,29 @@ async function addEmployee() {
         createIntern();
     } else {
         console.log("All team members have been added.")
-        return;
     }
-}
+};
+
+function generateHTML(data) {
+    const path = "./dist/index.html";
+
+    fs.writeFile(path, data, e => {
+        if (e) {
+          console.error("write error:  " + error.message);
+        } else {
+          console.log("Successful Write to " + path);
+        }
+    })
+
+};
 
 async function getTeamProfile() {
     const manager = await createManager();
     const employees = await addEmployee();
 
+    generateHTML("heeelllo")
 }
 
 getTeamProfile();
+generateHTML("heeelllo");
 

@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/nvsco-10/team-profile-generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.2",
+    "inquirer": "^8.2.2"
+  },
+  "devDependencies": {
     "jest": "^27.5.1"
   }
 }
