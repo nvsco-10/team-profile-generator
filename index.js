@@ -3,6 +3,7 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
+const { managerCard, engineerCard, internCard } = require('./src/cards');
 
 const teamMembers = [];
 
@@ -136,7 +137,10 @@ async function addEmployee() {
         createIntern();
     } else {
         console.log("All team members have been added.")
+        const data = await createCards(teamMembers);
+        generateHTML(data);
     }
+
 };
 
 function generateHTML(data) {
@@ -152,13 +156,36 @@ function generateHTML(data) {
 
 };
 
+async function createCards(members) {
+    const teamCards = [];
+
+    members.forEach(member => {
+        const role = member.getRole();
+        let card = "";
+
+        if (role === "Manager") {
+            card = managerCard(member)
+        } else if (role === "Engineer") {
+            card = engineerCard(member)
+        } else if (role === "Intern") {
+            card = internCard(member);
+        }
+
+        teamCards.push(card);
+    })
+
+   return teamCards.join("");
+
+}
+
 async function getTeamProfile() {
     const manager = await createManager();
     const employees = await addEmployee();
 
-    generateHTML("heeelllo")
+    
+    // console.log(data);
 }
 
 getTeamProfile();
-generateHTML("heeelllo");
+
 

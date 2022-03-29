@@ -1,4 +1,6 @@
-function managerCard(name, id, email, number) {
+function managerCard(manager) {
+    const { name, id, email, officeNumber} = manager;
+
     return `
     <div class="col col-lg-3 col-md-6">
         <div class="card">
@@ -15,7 +17,7 @@ function managerCard(name, id, email, number) {
                 <ul class="list-group list-group-flush my-4">
                     <li class="list-group-item"><b>ID: </b>${id}</li>
                     <li class="list-group-item"><b>Email: </b><a             href="mailto:${email}">${email}</a></li>
-                    <li class="list-group-item"><b>Office Number: </b>${number}</li>
+                    <li class="list-group-item"><b>Office Number: </b>${officeNumber}</li>
                 </ul>
             </div>
         </div>
@@ -23,7 +25,9 @@ function managerCard(name, id, email, number) {
     `
 }
 
-function engineerCard(name, id, email, github) {
+function engineerCard(engineer) {
+    const { name, id, email, github} = engineer;
+
     return `
     <div class="col col-lg-3 col-md-6">
         <div class="card">
@@ -48,7 +52,9 @@ function engineerCard(name, id, email, github) {
     `
 }
 
-function internCard(name, id, email, school) {
+function internCard(intern) {
+    const { name, id, email, school} = intern;
+
     return `
     <div class="col col-lg-3 col-md-6">
         <div class="card">
