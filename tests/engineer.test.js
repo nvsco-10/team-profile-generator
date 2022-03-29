@@ -9,6 +9,15 @@ describe("Engineer", () => {
         })
     })
 
+    describe("getGithub", () => {
+        it("should return the engineer's GitHub username", () => {
+            const username = "garyyy"
+            const engineer = new Engineer("Gary", 5, "gary@email.com", username);
+            
+            expect(engineer.getGithub()).toEqual(username);
+        })
+    })
+
     describe("getRole", () => {
         it("should return the role of Engineer", () => {
             const engineer = new Engineer("Gary", 5, "gary@email.com", "garyyy");
