@@ -184,8 +184,6 @@ async function getTeamProfile() {
     const manager = await createManager();
     const employees = await addEmployee();
 
-    
-    // console.log(data);
 }
 
 getTeamProfile();
