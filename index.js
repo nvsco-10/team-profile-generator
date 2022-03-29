@@ -4,6 +4,7 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const { managerCard, engineerCard, internCard, htmlTemplate } = require('./src/templates');
+const { validateEmail, validateString } = require('./src/validations')
 
 const teamMembers = [];
 
@@ -12,7 +13,8 @@ async function createManager() {
         {
             type: "input",
             name: "name",
-            message: "What is the team manager's name?"
+            message: "What is the team manager's name?",
+            validate: validateString
         },
         {
             type: "input",
@@ -22,7 +24,8 @@ async function createManager() {
         {
             type: "email",
             name: "email",
-            message: "What is the team manager's email address?"
+            message: "What is the team manager's email address?",
+            validate: validateEmail
         },
         {
             type: "input",
@@ -57,7 +60,8 @@ async function createEngineer() {
         {
             type: "email",
             name: "email",
-            message: "What is the engineer's email address?"
+            message: "What is the engineer's email address?",
+            validate: validateEmail
         },
         {
             type: "input",
@@ -94,7 +98,8 @@ async function createIntern() {
         {
             type: "email",
             name: "email",
-            message: "What is the intern's email address?"
+            message: "What is the intern's email address?",
+            validate: validateEmail
         },
         {
             type: "input",
@@ -121,11 +126,11 @@ async function addEmployee() {
         {
             type: "list",
             name: "role",
-            message: "Select an employee to add:",
+            message: "Which type of employee would you like to add?",
             choices: [
                 "Engineer",
                 "Intern",
-                "I don't have any employees to add"
+                "I don't have any more employees to add."
             ]
         }
     ]
@@ -152,7 +157,7 @@ function generateHTML(cards) {
         if (e) {
           console.error("write error:  " + error.message);
         } else {
-          console.log("Success! Check out your Team Profile at" + path);
+          console.log("Success! Check out your Team Profile at " + path);
         }
     })
 
@@ -181,6 +186,7 @@ async function createCards(members) {
 }
 
 async function getTeamProfile() {
+    console.log("Create Your Team Profile");
     const manager = await createManager();
     const employees = await addEmployee();
 
