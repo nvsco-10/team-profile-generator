@@ -48,6 +48,13 @@ A command-line application that takes in information about employees on a softwa
 </p>
 <br>
 
+<p align="center">
+    <i>Walkthrough video</i>
+</p>
+<br>
+
+
+
 ## License
 This code is licensed under [MIT License](https://mit-license.org/).
 
