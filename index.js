@@ -4,7 +4,7 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const { managerCard, engineerCard, internCard, htmlTemplate } = require('./src/templates');
-const { validateEmail, validateName } = require('./src/validations')
+const { validateEmail, validateName, validateNum, validateInput } = require('./src/validations')
 
 const teamMembers = [];
 
@@ -19,7 +19,8 @@ async function createManager() {
         {
             type: "input",
             name: "id",
-            message: "What is the team manager's employee id?"
+            message: "What is the team manager's employee id?",
+            validate: validateNum
         },
         {
             type: "email",
@@ -30,7 +31,8 @@ async function createManager() {
         {
             type: "input",
             name: "officenum",
-            message: "What is the team manager's office number?"
+            message: "What is the team manager's office number?",
+            validate: validateNum
         },
 
     ];
@@ -56,7 +58,8 @@ async function createEngineer() {
         {
             type: "input",
             name: "id",
-            message: "What is the engineer's employee id?"
+            message: "What is the engineer's employee id?",
+            validate: validateNum
         },
         {
             type: "email",
@@ -67,7 +70,8 @@ async function createEngineer() {
         {
             type: "input",
             name: "github",
-            message: "What is the engineer's GitHub username?"
+            message: "What is the engineer's GitHub username?",
+            validate: validateInput
         },
 
     ];
@@ -95,7 +99,8 @@ async function createIntern() {
         {
             type: "input",
             name: "id",
-            message: "What is the intern's employee id?"
+            message: "What is the intern's employee id?",
+            validate: validateNum
         },
         {
             type: "email",
@@ -106,7 +111,8 @@ async function createIntern() {
         {
             type: "input",
             name: "school",
-            message: "What is the intern's school?"
+            message: "What is the intern's school?",
+            validate: validateId
         },
 
     ];

@@ -18,4 +18,20 @@ function validateName(input) {
     }
 }
 
-module.exports = { validateEmail, validateName };
+function validateNum(input) {
+    if (!isNaN(input)) {
+        return true;
+    } else {
+        return "Please enter a number.";
+    }
+}
+
+function validateInput(input) {
+    if (input) {
+        return true;
+    } else {
+        return "Please enter a value.";
+    }
+}
+
+module.exports = { validateEmail, validateName, validateNum, validateInput };
