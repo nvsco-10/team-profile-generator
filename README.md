@@ -23,6 +23,12 @@ A command-line application that takes in information about employees on a softwa
 
 <br>
 
+OR
+
+* Enter the following command to install all dependencies (including Jest testing): <br> ```npm i``` <br> 
+
+<br>
+
 ## Usage
 * Run the application in your teminal by entering the following command: <br>
 ```node index.js``` 
@@ -53,7 +59,6 @@ A command-line application that takes in information about employees on a softwa
 </p>
 <br>
 
-https://user-images.githubusercontent.com/97539424/160731098-cf34535f-bbb9-42ed-8564-c3c7f7051ed3.mp4
 
 <br>
 
