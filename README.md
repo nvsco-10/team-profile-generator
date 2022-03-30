@@ -53,6 +53,10 @@ A command-line application that takes in information about employees on a softwa
 </p>
 <br>
 
+https://user-images.githubusercontent.com/97539424/160731098-cf34535f-bbb9-42ed-8564-c3c7f7051ed3.mp4
+
+<br>
+
 
 ## License
 This code is licensed under [MIT License](https://mit-license.org/).
@@ -67,10 +71,6 @@ Start running the tests by entering the following command: <br>
 ```npm test``` 
 <br>
 
-
-https://user-images.githubusercontent.com/97539424/160731098-cf34535f-bbb9-42ed-8564-c3c7f7051ed3.mp4
-
-<br>
 <hr>
 
 ## Questions
