@@ -25,13 +25,13 @@ A command-line application that takes in information about employees on a softwa
 
 ## Usage
 * Run the application in your teminal by entering the following command: <br>
-```npm start``` 
+```node index.js``` 
 <br>
 
 * You will be presented with a series of questions about your software engineering team.
 
 <p align="center">
-    <img src="./assets/img/questions.PNG" alt="screenshot of prompt questions" width="400px">
+    <img src="./assets/img/questions.PNG" alt="screenshot of prompt questions" height="200px">
 </p>
 <br>
 
@@ -46,6 +46,7 @@ A command-line application that takes in information about employees on a softwa
 <p align="center">
     <img src="assets/img/generatedHTML.PNG" alt="screenshot of generated HTML file" height="400px">
 </p>
+<br>
 
 ## License
 This code is licensed under [MIT License](https://mit-license.org/).
@@ -54,6 +55,7 @@ This code is licensed under [MIT License](https://mit-license.org/).
 
 ## Tests
 To run tests, install the [Jest testing package](https://www.npmjs.com/package/jest) in the project folder by entering the following command in your terminal: <br> ```npm i -D jest``` <br> 
+<br>
 
 Start running the tests by entering the following command: <br>
 ```npm test``` 
@@ -64,4 +66,4 @@ Start running the tests by entering the following command: <br>
 ## Questions
 If you have any questions, please don't hesitate to contact:
  * Github - [github.com/nvsco-10](https://github.com/nvsco-10)
- * Email - neemavelasco@gmail.com.
+ * Email - neemavelasco@gmail.com
