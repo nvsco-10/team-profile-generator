@@ -112,7 +112,7 @@ async function createIntern() {
             type: "input",
             name: "school",
             message: "What is the intern's school?",
-            validate: validateNum
+            validate: validateInput
         },
 
     ];
